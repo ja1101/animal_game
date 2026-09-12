@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 
@@ -5,7 +6,7 @@ def call_gpt(p):
   response = requests.post(
   url="https://openrouter.ai/api/v1/chat/completions",
   headers={
-    "Authorization": "Bearer ***REMOVED***",
+    "Authorization": "Bearer " + os.environ["OPENROUTER_API_KEY"],
     "Content-Type": "application/json",
   },
   data=json.dumps({
