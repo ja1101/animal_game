@@ -4,8 +4,8 @@ from glm import call_gpt
 def main():
     animal = get_random_animal()
     while True:
-        q = input("Ask a yes or no question to guess the animal: ")
-        if "give up" in q.lower():
+        q = input("Ask a yes or no question to guess the animal: ").lower()
+        if "give up" in q:
             print("The animal was: " + animal)
             return
         if animal in q:
