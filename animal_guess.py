@@ -11,7 +11,8 @@ def main():
         if animal in q:
             print("Correct!")
             return
-        gpt_resp = call_gpt("For animal " + animal + ", answer yes or no only, without explanations: " + q)
+        gpt_resp = call_gpt("For animal " + animal +
+                            ", answer yes or no only, without explanations: " + q)
         print(gpt_resp["content"])
 
 if __name__ == "__main__":
