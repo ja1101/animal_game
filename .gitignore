@@ -6,3 +6,5 @@ __pycache__/animal.cpython-314.pyc
 /pyproject.toml
 /.idea/vcs.xml
 /uv.lock
+*.pyc
+peters.py
