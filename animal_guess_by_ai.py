@@ -7,7 +7,8 @@ def main():
     print(animal)
     gpt_resp = call_gpt("Play 20 questions. " + 
     "I am thinking of a type of animal (e.g. dog). Your task will be to guess which type it is " +
-    "by asking yes or no questions back to me. So, ask your first question.")
+    "by asking yes or no questions and keeping the context to narrow down the choices. " +
+    "So, ask your first question.")
     resp = gpt_resp["content"]
     print(resp)
     while True:
@@ -18,7 +19,7 @@ def main():
         if "give up" in q:
             print("The animal was: " + animal)
             return
-        gpt_resp = call_gpt(f"your response was {gpt_resp} - " + f"The answer to your question is {q}. " +
+        gpt_resp = call_gpt(f"The answer to your question is {q}. " + f"Your response was {gpt_resp}. " +
         "Now ask your next question based on the information you have so far.")
         resp = gpt_resp["content"]
         print(resp)

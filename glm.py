@@ -21,4 +21,5 @@ def call_gpt(p):
   })
   )
   response = response.json()
+  #print(response)
   return response['choices'][0]['message']
